@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BytEquity | Shensu AI Technologies</title>
+    <style>
+        /* CSS Variables for a Minimalist Dark Theme */
+        :root {
+            --bg-color: #000000;
+            --text-main: #f5f5f5;
+            --text-muted: #888888;
+            --accent: #ffffff;
+            --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-stack);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation */
+        header {
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent);
+        }
+
+        /* Main Content Area */
+        main {
+            flex: 1;
+            padding: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+        }
+        
+        ul {
+            color: var(--text-muted);
+            padding-left: 1.5rem;
+            max-width: 800px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 1rem;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #222;
+            margin: 3rem 0;
+            max-width: 800px;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: #111;
+            border-radius: 8px;
+            border: 1px solid #222;
+            max-width: 800px;
+        }
+
+        .contact-box a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 4rem;
+            border-top: 1px solid #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            cursor: pointer;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header, footer, main { padding: 2rem; }
+            header { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+            h1 { font-size: 2.5rem; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
+            nav { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container" onclick="showSection('home')">
+            <img src="1.png" alt="BytEquity Logo">
+            <span class="logo-text">BytEquity</span>
+        </div>
+        <nav>
+            <a onclick="showSection('home')" id="nav-home" class="active">Home</a>
+            <a onclick="showSection('research')" id="nav-research">Research</a>
+            <a href="https://www.linkedin.com/company/bytequity" target="_blank">LinkedIn</a>
+            <a onclick="showSection('contact')" id="nav-contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="page-section active">
+            <h1>Intelligence driving equity.</h1>
+            <p>Empowering the future of financial technology through advanced AI systems and robust data analytics. Driven by innovation, built for resilience.</p>
+            
+            <hr>
+            
+            <h2>Our Focus</h2>
+            <p>At BytEquity, our primary focus is on comprehensive <strong>Financial Data Analysis</strong> for both individuals and organizations. We specialize in transforming fragmented market data into structured, actionable intelligence. Whether empowering retail investors to make informed decisions or enabling institutional entities to manage complex portfolios, our analytical infrastructure is designed to provide clarity in highly volatile environments.</p>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="page-section">
+            <h1>Research & Foundations</h1>
+            <p>Our methodologies in algorithmic trading and quantitative finance are deeply rooted in established academic research and emerging machine learning paradigms. Below are key references that inform our approach:</p>
+            <ul>
+                <li>The integration of machine learning with quantitative finance has emerged as a powerful paradigm for real-time market prediction and portfolio optimization.</li>
+                <li>Machine learning models can incorporate diverse data sources such as historical price movements, trading volumes, and macroeconomic indicators.</li>
+                <li>In their 2013 publication "Machine Learning for Market Microstructure and High Frequency Trading," Kearns and Nevmyvaka survey the practical application of machine learning to trading problems utilizing microstructure data.</li>
+                <li>Fischer and Krauss (2018) authored the highly referenced paper "Deep learning with long short-term memory networks for financial market predictions," demonstrating the efficacy of sequence models in quantitative finance.</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="page-section">
+            <h1>Get in Touch</h1>
+            <p>We are always open to discussing new opportunities, partnerships, and technological advancements.</p>
+            <div class="contact-box">
+                <p style="margin-bottom: 0.5rem; color: var(--text-main);">Email us directly at:</p>
+                <a href="mailto:info@bytequity.com">info@bytequity.com</a>
+            </div>
+        </section>
+
+        <!-- Privacy Notice Section -->
+        <section id="privacy" class="page-section">
+            <h1>Privacy Notice</h1>
+            <p><strong>Effective Date:</strong> June 24, 2026</p>
+            <h2>1. Information We Collect</h2>
+            <p>Shensu AI Technologies Pvt. Ltd. (operating as "BytEquity") collects information you provide directly to us, such as when you communicate with us via info@bytequity.com.</p>
+            <h2>2. How We Use Information</h2>
+            <p>We use the information we collect to provide, maintain, and improve our services, to communicate with you, and to comply with our legal obligations.</p>
+            <h2>3. Data Security</h2>
+            <p>We implement commercially reasonable technical and organizational measures to protect your personal data against unauthorized access or disclosure.</p>
+            <h2>4. Contact Us</h2>
+            <p>If you have any questions about this Privacy Notice, please contact us at info@bytequity.com.</p>
+        </section>
+
+        <!-- Terms & Conditions Section -->
+        <section id="terms" class="page-section">
+            <h1>Terms & Conditions</h1>
+            <p><strong>Last Updated:</strong> June 24, 2026</p>
+            <h2>1. Agreement to Terms</h2>
+            <p>By accessing the BytEquity website, you agree to be bound by these Terms and Conditions and our Privacy Notice. If you do not agree with any part of these terms, you are prohibited from using this site.</p>
+            <h2>2. Intellectual Property</h2>
+            <p>The website and its original content, features, and functionality are owned by Shensu AI Technologies Pvt. Ltd. and are protected by international copyright, trademark, patent, trade secret, and other intellectual property laws.</p>
+            <h2>3. Limitation of Liability</h2>
+            <p>In no event shall Shensu AI Technologies Pvt. Ltd., nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages arising out of your access to or use of the website.</p>
+            <h2>4. Governing Law</h2>
+            <p>These Terms shall be governed and construed in accordance with the laws of the jurisdiction in which Shensu AI Technologies Pvt. Ltd. is registered, without regard to its conflict of law provisions.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div>&copy; 2026 Shensu AI Technologies Pvt. Ltd. All rights reserved. Trade name: BytEquity.</div>
+        <div>
+            <a onclick="showSection('privacy')">Privacy Notice</a>
+            <a onclick="showSection('terms')">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to handle single-page navigation without reloading
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from nav links
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Highlight nav link if it exists
+            const activeNav = document.getElementById('nav-' + sectionId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
